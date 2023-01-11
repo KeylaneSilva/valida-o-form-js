@@ -2,7 +2,7 @@ const form = document.querySelector("#form");
 const nameInput = document.querySelector("#nome");
 const emailInput = document.querySelector("#email");
 const senhaInput = document.querySelector("#senha");
-const situacaoSelect = document.querySelector("situacao");
+const situacaoSelect = document.querySelector("#situacao");
 const mensagemTextArea = document.querySelector("#mensagem");
 
 form.addEventListener("submit", (event) => {
@@ -26,6 +26,16 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  // verifcar situação
+  if(situacaoSelect.value === ""){
+    alert('Por favor, selecione a situação');
+    return;
+  }
+  // verificar mensagem
+  if(mensagemTextArea.value === ""){
+    alert("Por favor, escreva uma mensagem");
+    return;
+  }
   // enviar o form se tudo tiver ok
   form.submit();
 });
